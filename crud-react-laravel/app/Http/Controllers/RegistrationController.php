@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Registration;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
+use Carbon\Carbon;
+
 class RegistrationController extends Controller
 {
     /**
@@ -14,7 +18,7 @@ class RegistrationController extends Controller
      */
     public function index()
     {
-        //
+        return Registration::select('id','name','email','phone' , 'checkbox')->get();
     }
 
     /**
@@ -35,7 +39,12 @@ class RegistrationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required',
+            'phone'=>'required',
+            'checkbox'=>'required'
+        ]);
     }
 
     /**
@@ -46,7 +55,9 @@ class RegistrationController extends Controller
      */
     public function show(Registration $registration)
     {
-        //
+        return response()->json([
+            'registration'=>$registration
+        ]);
     }
 
     /**
@@ -69,7 +80,13 @@ class RegistrationController extends Controller
      */
     public function update(Request $request, Registration $registration)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required',
+            'phone'=>'required',
+            'checkbox'=>'required'
+            
+        ]);
     }
 
     /**
@@ -80,6 +97,9 @@ class RegistrationController extends Controller
      */
     public function destroy(Registration $registration)
     {
-        //
+        $registration->delete();
+        return response()->json([
+            'message' => 'registration deleted'
+        ]);
     }
 }
