@@ -112,6 +112,26 @@ export default function CreateProduct() {
                         </Form.Group>
                       </Col>
                   </Row>
+                  <Row className="my-3">
+                      <Col>
+                        <Form.Group controlId="Description">
+                            <input type="checkbox"  value={checkbox} onChange={(event)=>{
+                              setCheckbox(event.target.value)
+                            }}/>&nbsp;
+                            <Form.Label>FrontEnd</Form.Label>
+                        </Form.Group>
+                      </Col>
+                  </Row>
+                  <Row className="my-3">
+                      <Col>
+                        <Form.Group controlId="Description">
+                            <input type="checkbox"  value={checkbox} onChange={(event)=>{
+                              setCheckbox(event.target.value)
+                            }}/>&nbsp;
+                            <Form.Label>BackEnd</Form.Label>
+                        </Form.Group>
+                      </Col>
+                  </Row>
                   <Button variant="primary" className="mt-2" size="lg" block="block" type="submit">
                     Save
                   </Button>

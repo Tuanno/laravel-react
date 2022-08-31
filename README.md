@@ -57,13 +57,13 @@ sua tabela.
 
    ### Passo 8- Definindo Rotas na api.php do projeto
 
-    Acesse a seguinte página do projeto para criação de rotas e comunicação dentro do
+    > Acesse a seguinte página do projeto para criação de rotas e comunicação dentro do
     seu sistema: app/routes.
     Fassa a seguinte alteração como mostrado abaixo:
-
+```php
     use App\Http\Controllers\RegistrationController;
     Route::resource('registrations',RegistrationController::class);
-
+```
     Para confirmar as alterações anteriores digite o seguinte comando:
 
     php artisan storage:link
