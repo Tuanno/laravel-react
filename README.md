@@ -40,13 +40,14 @@ php artisan migrate
 
 ### Passo 6- Atualização de Model do projeto
 
-Acesse a seguinte página do projeto para fazer alteração no Model: app/Models.
+> Acesse a seguinte página do projeto para fazer alteração no Model: app/Models.
 E fassa a seguinte alteração como abaixo, seguindo os dados cadastrados em sua
 tabela:
-
+```php
     use HasFactory;
 
     protected $fillable = ['name', 'email', 'phone' , 'checkbox'];
+```
 
 ### Passo 7- Alteração no Controller do projeto
 
