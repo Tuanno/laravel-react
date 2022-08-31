@@ -84,20 +84,20 @@ class RegistrationController extends Controller
      * @param  \App\Models\Registration  $registration
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Registration $registration)
     {
-    //     $validate=$request->validate([
-    //         'name'=>'nullable',
-    //         'email'=>'nullable',
-    //         'phone'=>'nullable',
-    //         'checkbox'=>'nullable'
-    //     ]);
-    //     $r=Registration::find(2);
-    //     $r->update($validate);
-    //     return response()->json([
-    //         'registration'=>$registration
-    //     ]);
-    print_r($request->all());exit;
+        $validate=$request->validate([
+            'name'=>'required',
+            'email'=>'required',
+            'phone'=>'required',
+            'checkbox'=>'required'
+        ]);
+
+        $registration->update($validate);
+
+        return response()->json([
+            'registration'=>$registration
+        ]);
     }
 
     /**

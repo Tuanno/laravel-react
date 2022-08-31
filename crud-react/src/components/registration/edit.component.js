@@ -43,24 +43,25 @@ export default function EditUser() {
     e.preventDefault();
 
     const formData = new FormData()
+    formData.append('_method', "PUT")
     formData.append('name', name)
     formData.append('email', email)
     formData.append('phone', phone)
     formData.append('checkbox', checkbox)
-    
-    await axios.put(`http://localhost:8000/api/registration/${id}`, formData).then(({data})=>{
+
+    await axios.post(`http://localhost:8000/api/registrations/${id}`, formData).then(({ data }) => {
       Swal.fire({
-        icon:"success",
-        text:data.message
+        icon: "success",
+        text: data.message
       })
       navigate("/")
-    }).catch(({response})=>{
-      if(response.status===422){
+    }).catch(({ response }) => {
+      if (response.status === 422) {
         setValidationError(response.data.errors)
-      }else{
+      } else {
         Swal.fire({
-          text:response.data.message,
-          icon:"error"
+          text: response.data.message,
+          icon: "error"
         })
       }
     })
