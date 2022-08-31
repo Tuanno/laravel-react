@@ -39,11 +39,17 @@ class RegistrationController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        
+        $validate=$request->validate([
             'name'=>'required',
             'email'=>'required',
             'phone'=>'required',
             'checkbox'=>'required'
+        ]);
+
+        $registration=Registration::create($validate);
+        return response()->json([
+            'registration'=>$registration
         ]);
     }
 
@@ -78,15 +84,20 @@ class RegistrationController extends Controller
      * @param  \App\Models\Registration  $registration
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Registration $registration)
+    public function update(Request $request, $id)
     {
-        $request->validate([
-            'name'=>'required',
-            'email'=>'required',
-            'phone'=>'required',
-            'checkbox'=>'required'
-            
-        ]);
+    //     $validate=$request->validate([
+    //         'name'=>'nullable',
+    //         'email'=>'nullable',
+    //         'phone'=>'nullable',
+    //         'checkbox'=>'nullable'
+    //     ]);
+    //     $r=Registration::find(2);
+    //     $r->update($validate);
+    //     return response()->json([
+    //         'registration'=>$registration
+    //     ]);
+    print_r($request->all());exit;
     }
 
     /**

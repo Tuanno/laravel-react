@@ -15,13 +15,14 @@ export default function EditUser() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [phone, setPhone] = useState("")
-  const [checkbox, setCheckBox] = useState("")
+  const [checkbox, setCheckbox] = useState("")
   
   const [validationError,setValidationError] = useState({})
 
   useEffect(()=>{
     fetchRegistration()
   },[])
+  
 
   const fetchRegistration = async () => {
     await axios.get(`http://localhost:8000/api/registrations/${id}`).then(({data})=>{
@@ -29,7 +30,7 @@ export default function EditUser() {
       setName(name)
       setEmail(email)
       setPhone(phone)
-      setCheckBox(checkbox)
+      setCheckbox(checkbox)
     }).catch(({response:{data}})=>{
       Swal.fire({
         text:data.message,
@@ -42,13 +43,12 @@ export default function EditUser() {
     e.preventDefault();
 
     const formData = new FormData()
-    formData.append('_method', 'PATCH');
     formData.append('name', name)
     formData.append('email', email)
     formData.append('phone', phone)
     formData.append('checkbox', checkbox)
     
-    await axios.post(`http://localhost:8000/api/registrations/${id}`, formData).then(({data})=>{
+    await axios.put(`http://localhost:8000/api/registration/${id}`, formData).then(({data})=>{
       Swal.fire({
         icon:"success",
         text:data.message
@@ -107,7 +107,7 @@ export default function EditUser() {
                       <Col>
                         <Form.Group controlId="Description">
                             <Form.Label>Email</Form.Label>
-                            <Form.Control as="textarea" rows={3} value={email} onChange={(event)=>{
+                            <Form.Control as="textarea"  value={email} onChange={(event)=>{
                               setEmail(event.target.value)
                             }}/>
                         </Form.Group>
@@ -117,7 +117,7 @@ export default function EditUser() {
                       <Col>
                         <Form.Group controlId="Description">
                             <Form.Label>Phone</Form.Label>
-                            <Form.Control as="textarea" rows={3} value={phone} onChange={(event)=>{
+                            <Form.Control as="textarea"  value={phone} onChange={(event)=>{
                               setPhone(event.target.value)
                             }}/>
                         </Form.Group>
@@ -127,8 +127,8 @@ export default function EditUser() {
                       <Col>
                         <Form.Group controlId="Description">
                             <Form.Label>CheckBox</Form.Label>
-                            <Form.Control as="textarea" rows={3} value={checkbox} onChange={(event)=>{
-                              setCheckBox(event.target.value)
+                            <Form.Control as="textarea"  value={checkbox} onChange={(event)=>{
+                              setCheckbox(event.target.value)
                             }}/>
                         </Form.Group>
                       </Col>
