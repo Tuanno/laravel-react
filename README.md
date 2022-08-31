@@ -4,10 +4,10 @@ Aplicação que utiliza Axios no Framework React.js no FrontEnd e Laravel 8 como
 
 ## Passo 1- Instalação do Projeto laravel
 
-Abrindo o terminal do seu computador utilizamos esse comando para criar um novo projeto em laravel.
-
-composer create-project --prefer-dist laravel/laravel laravel-react
-
+> Abrindo o terminal do seu computador utilizamos esse comando para criar um novo projeto em laravel.
+```bash
+   composer create-project --prefer-dist laravel/laravel laravel-react
+```
 ### Passo 2- Criando Database para o projeto
 
 Após a instalação do projeto, abra o seu banco Mysql e crie um Database para ser adcionado em seu projeto. Utilizando o comando abaixo:
