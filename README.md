@@ -10,10 +10,10 @@ Aplicação que utiliza Axios no Framework React.js no FrontEnd e Laravel 8 como
 ```
 ### Passo 2- Criando Database para o projeto
 
-Após a instalação do projeto, abra o seu banco Mysql e crie um Database para ser adcionado em seu projeto. Utilizando o comando abaixo:
-
-Create database laravel;
-
+> Após a instalação do projeto, abra o seu banco Mysql e crie um Database para ser adcionado em seu projeto. Utilizando o comando abaixo:
+```bash
+   Create database laravel;
+```
 ### Passo 3- Adicionando Detalhes Ao arquivo .end
 
 Após criado o database, abra o arquivo .env localizado em seu projeto e altere os seguintes campos
@@ -22,22 +22,22 @@ DB_PASSWORD:<SENHA DO SEU BANCO>.
 
 ### Passo 4- Criação de Migration, Model e Controller
 
-Utilize o comando abaixo, para criação do Model, Controller e Migration que seram essenciais
+> Utilize o comando abaixo, para criação do Model, Controller e Migration que seram essenciais
 para o seu projeto.
-
-php artisan make:model Laravel -mcr
-
+```bash
+   php artisan make:model Laravel -mcr
+```
 ### Passo 5- Alterando a Migration do banco de dados
 
 Após a criação de sua migration, acesse a seguinte pasta em seu projeto para alterar os dados
 que seram enviados ao banco de dados: app/database/migration. Alterando assim como estiver no
 seu esquema de projeto.
 
-Depois de alterada sua migration digite o comando abaixo em seu terminal para criação da tabela
+> Depois de alterada sua migration digite o comando abaixo em seu terminal para criação da tabela
 em seu banco de dados:
-
-php artisan migrate
-
+```bash
+   php artisan migrate
+```
 ### Passo 6- Atualização de Model do projeto
 
 > Acesse a seguinte página do projeto para fazer alteração no Model: app/Models.
@@ -64,34 +64,38 @@ sua tabela.
     use App\Http\Controllers\RegistrationController;
     Route::resource('registrations',RegistrationController::class);
 ```
-    Para confirmar as alterações anteriores digite o seguinte comando:
-
+> Para confirmar as alterações anteriores digite o seguinte comando:
+```bash
     php artisan storage:link
-
+```
 ### Passo 9- Criação da aplicação Frontend para consulmir a API do Laravel
 
-Digite em seu terminal os seguintes comandos para criação da aplicação:
-
+> Digite em seu terminal os seguintes comandos para criação da aplicação:
+```bash
 1. npm install -g create-react-app
+```
+```bash
 2. create-react-app crud-react
-
-Após instalado, acesse a sua partição cd crud-react e e digite os seguintes comandos
+```
+> Após instalado, acesse a sua partição cd crud-react e e digite os seguintes comandos
 para ajudar na estilização da aplicação:
-
+```bash
 1. npm install axios react-bootstrap bootstrap
+```
+```bash
 2. npm install react-router-dom sweetalert2 --save
-
+```
 ### Passo 10- Criação de Components no FrontEnd
 
-Após entrar na aplicação Frontend, acesse a pasta raiz src e dentro dela crie uma pasta
+> Após entrar na aplicação Frontend, acesse a pasta raiz src e dentro dela crie uma pasta
 chamada: components. Para deixar sua aplicação mais organizada, dentro da pasta components
 crie a pasta registration "Nome de sua preferência, de acordo com o projeto", dentro da 
 pasta falada anteriormente crie os seguintes arquivos abaixo:
-
+```bash
 1. create.component.js
 2. edit.component.js
 3. list.component.js
-
+```
 e fassa suas edições de criação, edição e listagem necessarias para cada uma funcionar.
 
 ### Passo 11- Atualização da pasta App.js no FrontEnd
@@ -101,8 +105,11 @@ De acordo com as informações constadas em seu projeto e nos arquivos do Passo 
 
 Finalizando assim seu Crud com Laravel e Reactjs.
 
-Para acessar em seu navegador o sistema, abra 2 terminais e acesse seus servidores 
+> Para acessar em seu navegador o sistema, abra 2 terminais e acesse seus servidores 
 como mostrado nos comandos abaixo:
-
+```bash
 1. Backend: php artisan serve
+```
+```bash
 2. Frontend: npm run start
+```
