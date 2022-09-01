@@ -110,7 +110,7 @@ class RegistrationController extends Controller
     {
         $registration->delete();
         return response()->json([
-            'message' => 'registration deleted'
+            'message' => 'Registro deletado'
         ]);
     }
 }

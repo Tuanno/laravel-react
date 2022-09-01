@@ -21,12 +21,12 @@ export default function List() {
     const deleteRegistration = async (id) => {
         const isConfirm = await Swal.fire({
             name: 'Are you sure?',
-            text: "You won't be able to revert this!",
+            text: "Você Não poderá reverter isso!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            confirmButtonText: 'Sim, delete isso!'
           }).then((result) => {
             return result.isConfirmed
           });
@@ -54,7 +54,7 @@ export default function List() {
           <div className="row">
             <div className='col-12'>
                 <Link className='btn btn-primary mb-2 float-end' to={"/registration/create"}>
-                    Create Registration
+                    Criar Registro
                 </Link>
             </div>
             <div className="col-12">
@@ -63,11 +63,11 @@ export default function List() {
                         <table className="table table-bordered mb-0 text-center">
                             <thead>
                                 <tr>
-                                    <th>Name</th>
+                                    <th>Nome</th>
                                     <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>CheckBox</th>
-                                    <th>Actions</th>
+                                    <th>Telefone</th>
+                                    <th>Stack</th>
+                                    <th>Ações</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -77,14 +77,14 @@ export default function List() {
                                             <tr key={key}>
                                                 <td>{row.name}</td>
                                                 <td>{row.email}</td>
-                                                <td>{row.phone}</td>
+                                                <td className='phone'>{row.phone}</td>
                                                 <td>{row.checkbox}</td>
                                                 <td>
                                                     <Link to={`/registration/edit/${row.id}`} className='btn btn-success me-2'>
-                                                        Edit
+                                                        Editar
                                                     </Link>
                                                     <Button variant="danger" onClick={()=>deleteRegistration(row.id)}>
-                                                        Delete
+                                                        Deletar
                                                     </Button>
                                                 </td>
                                             </tr>

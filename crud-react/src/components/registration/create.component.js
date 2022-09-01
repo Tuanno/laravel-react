@@ -76,7 +76,7 @@ export default function CreateProduct() {
         <div className="col-12 col-sm-12 col-md-6">
           <div className="card">
             <div className="card-body">
-              <h4 className="card-title">Create Registration</h4>
+              <h4 className="card-title">Criar Registro</h4>
               <hr />
               <div className="form-wrapper">
                 {
@@ -100,7 +100,7 @@ export default function CreateProduct() {
                   <Row>
                     <Col>
                       <Form.Group controlId="Name">
-                        <Form.Label>Name</Form.Label>
+                        <Form.Label>Nome</Form.Label>
                         <Form.Control type="text" value={name} onChange={(event) => {
                           setName(event.target.value)
                         }} />
@@ -120,7 +120,7 @@ export default function CreateProduct() {
                   <Row className="my-3">
                     <Col>
                       <Form.Group controlId="Description">
-                        <Form.Label>Phone</Form.Label>
+                        <Form.Label>Telefone</Form.Label>
                         <Form.Control as="textarea" value={phone} onChange={(event) => {
                           setPhone(event.target.value)
                         }} />
@@ -147,11 +147,11 @@ export default function CreateProduct() {
                   </Row>
 
                   <Button variant="danger" className="mt-2" size="lg" block="block" type="reset" onClick={handleResetForm}>
-                    Cancel
+                    Limpar
                   </Button>
                   &nbsp;
                   <Button variant="primary" className="mt-2" size="lg" block="block" type="submit">
-                    Save
+                    Enviar
                   </Button>
 
                 </Form>
